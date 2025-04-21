@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import rocks.zipcode.piro.domain.Piro;
+import rocks.zipcode.piro.dto.PiroDTO;
 import rocks.zipcode.piro.service.PiroService;
 
 @RestController
@@ -22,8 +23,8 @@ public class PiroController {
     private PiroService piroService;
 
     @GetMapping
-    public List<Piro> getAllPiros() {
-        return piroService.findAll();
+    public List<PiroDTO> getAllPiros() {
+        return piroService.findAllDTOs();
     }
 
     @PostMapping

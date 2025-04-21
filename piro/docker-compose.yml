@@ -1,0 +1,16 @@
+services:
+  piro360j:
+    image: piro:latest
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./h2-data:/h2-data
+    environment:
+      H2_DB_PATH: /data/h2
+      H2_DB_NAME: h2-piro
+
+volumes:
+  h2-data:
+    driver: local
+  
